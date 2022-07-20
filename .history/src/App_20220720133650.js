@@ -52,14 +52,14 @@ const App = () => {
       * Boom! This should print out public address once we authorize Metamask.
       */
       console.log("Connected", accounts[0]);
-      setCurrentAccount(accounts[0]);
+      setCurrentAccount(accounts[0]); 
     } catch (error) {
       console.log(error);
     }
   }
 
   const renderNotConnectedContainer = () => (
-    <button onClick={connectWallet} className="cta-button connect-wallet-button">
+    <button className="cta-button connect-wallet-button">
       Connect to Wallet
     </button>
   );
@@ -76,13 +76,7 @@ const App = () => {
           <p className="sub-text">
             Each unique. Each beautiful. Discover your NFT today.
           </p>
-          {currentAccount === "" ? (
-            renderNotConnectedContainer()
-          ) : (
-            <button onClick={null} className="cta-button connect-wallet-button">
-              Mint NFT
-            </button>
-          )}
+          {renderNotConnectedContainer()}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
